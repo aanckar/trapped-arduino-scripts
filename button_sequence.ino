@@ -43,7 +43,7 @@ void setup() {
   for ( i=0; i<BUTTONS_LENGTH; i++ ) {
     pinMode(BUTTONS[i], INPUT_PULLUP);
   }
-  // Actiavte lock on startup
+  // Activate lock on startup
   digitalWrite(LOCK, HIGH); 
 }
 
