@@ -11,7 +11,7 @@ const int SPEAKER = 8;
 const int LED = 13;
 
 // Morse code: 1 = short, 2 = long
-// 8735
+// The code is 8735
 const int CODE[4][5] = {
   {2,2,2,1,1},
   {2,2,1,1,1},
