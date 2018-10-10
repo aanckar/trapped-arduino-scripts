@@ -19,9 +19,10 @@ const int CODE[4][5] = {
   {1,1,1,1,1}
 };
 
-/*
- * Don't edit below this
- */
+// LED states
+const int LED_ON = LOW;
+const int LED_OFF = HIGH;
+
 // Timeouts (in milliseconds)
 const int SHORT = 400;
 const int LONG = 1150;
@@ -29,9 +30,12 @@ const int PAUSE = 350;
 // Tone (in Hertz)
 const int TONE = 880;
 
+/*
+ * Don't edit below this
+ */
 void setup() {
   Serial.begin(9600);
-  digitalWrite(LED, LOW); 
+  digitalWrite(LED, LED_OFF); 
   pinMode(SPEAKER, OUTPUT);
 }
 
@@ -53,30 +57,30 @@ void loop() {
 
 void playShort() {
   Serial.print(".");
-  digitalWrite(LED, HIGH); 
+  digitalWrite(LED, LED_ON); 
   tone(SPEAKER, TONE, SHORT);
   delay(SHORT);
-  digitalWrite(LED, LOW); 
+  digitalWrite(LED, LED_OFF); 
   delay(PAUSE);
 }
 
 void playLong() {
   Serial.print("-");
-  digitalWrite(LED, HIGH); 
+  digitalWrite(LED, LED_ON); 
   tone(SPEAKER, TONE, LONG);
   delay(LONG);
-  digitalWrite(LED, LOW);
+  digitalWrite(LED, LED_OFF);
   delay(PAUSE);
 }
 
 void playPause() {
   Serial.println("");
-  digitalWrite(LED, LOW); 
+  digitalWrite(LED, LED_OFF); 
   delay(4 * PAUSE);
 }
 
 void playLongPause() {
   Serial.println("");
-  digitalWrite(LED, LOW); 
+  digitalWrite(LED, LED_OFF); 
   delay(12 * PAUSE);
 }
