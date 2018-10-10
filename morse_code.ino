@@ -24,9 +24,9 @@ const int LED_ON = LOW;
 const int LED_OFF = HIGH;
 
 // Timeouts (in milliseconds)
-const int SHORT = 400;
-const int LONG = 1150;
-const int PAUSE = 350;
+const int SHORT = 1.5 * 400;
+const int LONG = 1.5 * 1150;
+const int PAUSE = 1.5 * 350;
 // Tone (in Hertz)
 const int TONE = 880;
 
@@ -59,7 +59,6 @@ void playShort() {
   Serial.print(".");
   digitalWrite(LED, LED_ON); 
   tone(SPEAKER, TONE, SHORT);
-  delay(SHORT);
   digitalWrite(LED, LED_OFF); 
   delay(PAUSE);
 }
@@ -68,7 +67,6 @@ void playLong() {
   Serial.print("-");
   digitalWrite(LED, LED_ON); 
   tone(SPEAKER, TONE, LONG);
-  delay(LONG);
   digitalWrite(LED, LED_OFF);
   delay(PAUSE);
 }
